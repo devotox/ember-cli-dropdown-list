@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-dropdown-list",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A ember select dropdown plugin.",
   "directories": {
     "doc": "doc",
