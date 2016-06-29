@@ -26,6 +26,7 @@ This README outlines the details of collaborating on this Ember addon.
 For more information on using ember-cli, visit [http://ember-cli.com/](http://ember-cli.com/).
 
 ## Usage
+```javascript
 /**
  * Ember select component
  * due to deprecation of view 'select' http://emberjs.com/deprecations/v1.x/#toc_ember-select
@@ -62,3 +63,4 @@ For more information on using ember-cli, visit [http://ember-cli.com/](http://em
 	prompt: optional string to display on the top of the dropdown list when nothing is selected
 	action: name of function to invoke when the selected option changes
  */
+```
