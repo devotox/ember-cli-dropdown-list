@@ -39,7 +39,7 @@ import Ember from 'ember';
 export default Ember.Component.extend({
 	content: null,
 	selectedValue: null,
-	setAttrs: function(){
+	setAttrs(){
 		let content = (this.get('content') || []).slice();
 
 		//get the label path if there is any if not default to '' which just takes the object
