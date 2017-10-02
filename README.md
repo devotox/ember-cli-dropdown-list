@@ -1,5 +1,7 @@
 # ember-cli-dropdown-list
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/devotox/ember-cli-dropdown-list.svg)](https://greenkeeper.io/)
+
 This README outlines the details of collaborating on this Ember addon.
 
 ## Installation
