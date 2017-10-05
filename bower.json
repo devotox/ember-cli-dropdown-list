@@ -1,9 +1,0 @@
-{
-  "name": "ember-cli-dropdown-list",
-  "dependencies": {
-    "ember": "components/ember#canary"
-  },
-  "resolutions": {
-    "ember": "canary"
-  }
-}

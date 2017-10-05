@@ -1,40 +1,37 @@
----
 language: node_js
 node_js:
-  - "4"
-
+- '4'
 sudo: false
-
+dist: trusty
+addons:
+  chrome: stable
 cache:
   directories:
-    - $HOME/.npm
-    - $HOME/.cache # includes bowers cache
-
+  - "$HOME/.npm"
 env:
-  # we recommend testing LTS's and latest stable release (bonus points to beta/canary)
-  - EMBER_TRY_SCENARIO=ember-lts-2.4
+  matrix:
   - EMBER_TRY_SCENARIO=ember-lts-2.8
+  - EMBER_TRY_SCENARIO=ember-lts-2.12
   - EMBER_TRY_SCENARIO=ember-release
   - EMBER_TRY_SCENARIO=ember-beta
   - EMBER_TRY_SCENARIO=ember-canary
   - EMBER_TRY_SCENARIO=ember-default
-
+  global:
+    secure: fOTO/HpUT0xsfml9iXuEL9qBu0NVErcig6CmrS1DFv7f4x9/mYQMNzLUv5b6VBPqGHeFNHiGaUUza3Ufc5KpL7DOu/1y6TFQlSoM6MRRdIXb+50MObvkJ4wXwYJH7Zrb4g8RTaBOY9uU5XQkm/E6GWWF3NiYFoVzCYPNSgAALko1caoEX2hoJNXJSd0T4G+gxtxc2g08RGunBPLqIyy2avMRN4yq0WDN2NbBrztM01FA5RoOLPyX0hhzyIZ+45z34wKvZtu7rj9h1KbFOZOVFJWpHDa0bXxhF63ldxPINe2QMOSsOD22Czk1+IKyC+88gtkvUq7pGUaJK6YdVDRcW9G/DMHVy/IE2aFabrPDVgzrmeCoVKzATzt8nMfIMTTu9Unoa5fdohpJ0NPhYnPfVAGfJ+2MPITgP+x2X6M5+KgHCBdaIgwBVnZE9DTb1L9c/Eh50zeHHbfv9L+NVlbQFzMWNj+kKWMj0qwh6JPpSFiKaOvTK6XP+NSUc7euAZgqK6lwqS07pvcql4qvzbeRWyn/GZuRHOGvfkUNuvLee8dMKfpF3s1VQ6blHHqKB8qH2ifxawiztWgUkYxK0GFTk//ZopLzP90bLl0JiGlg517tp5V9eBOK5ZlPwsSOhD+wta9gCssPjK4i2H2IwLox7AqXegigBMdqIbXz9LaFVAY=
 matrix:
   fast_finish: true
   allow_failures:
-    - env: EMBER_TRY_SCENARIO=ember-canary
-
+  - env: EMBER_TRY_SCENARIO=ember-canary
 before_install:
-  - npm config set spin false
-  - npm install -g bower phantomjs-prebuilt
-  - bower --version
-  - phantomjs --version
-
-install:
-  - npm install
-  - bower install
-
+- npm config set spin false
+- npm install -g npm@4
+- npm --version
+- npm install -g greenkeeper-lockfile@1
+before_script: greenkeeper-lockfile-update
+after_script: greenkeeper-lockfile-upload
 script:
-  # Usually, it's ok to finish the test scenario without reverting
-  #  to the addon's original dependency state, skipping "cleanup".
-  - node_modules/.bin/ember try:one $EMBER_TRY_SCENARIO test --skip-cleanup
+- node_modules/.bin/ember try:one $EMBER_TRY_SCENARIO --skip-cleanup
+notifications:
+  slack:
+    rooms:
+      secure: e5uwI4aNHj1d2U4lZIGsgcSP3TR6Y3eVEzqjQDVm9Ev/0JO8UWklWp5fjJtl1Yg7rifbtDeiX2U3x2jfpQpg/CMalY7lVTWyrGPW+lhWe7aDaGm9gAK1mwpnRTFtatF5vU/46p0CcK24iHvGojEWPQmRrHdeAeq457gB03Utg+Qkhx2mHQmd/ObcZaPOcMyB2F6wcDVDwSF4kHG6T9cS9XXu/EgVsGMrsSJ/uOZD4oJzXE4I8dcLwVw7jDCrBd8/HlyosdhAIrnLMRD193r3YSzepwYA535BglLaB2fIknGs2tq8MoQ7zxs/FLLzRhLHabWr79O2hVhqJt3JHryWjPrmK9OGNq/eXkeDEXQ7QTF136RKmbWRW6tzoBU0lZaf5vyfkYalxwniIUV9hrRpFqLuhk544sspBarOpOGYyBCXd96Y+ToLNLDdC73tqLSv2Ki8Okusb6wHGEJdpw8pYgS031bSEp67SoZGrhWmy3UkIt2x9ve8SZ0VU5DZtnqImwGll1XOREcVCaW9FF6l47h0bORV+U+ZaH4xmCzAHo8dw6hWzRxld9oFoTrizrKTASbuEcfLv09C+fY2qnljKhQwowr3kefJK5XVubJJQucYSq/CFh4HzT1q4Mkvvmr9z+LXjbX+QyIG3FGK085s5m6oe8bftrUreVQh4zPB2zE=

@@ -1,42 +1,13 @@
-/**
- * Ember select component
- * due to deprecation of view 'select' http://emberjs.com/deprecations/v1.x/#toc_ember-select
- * 20 November 2015
- * This dropdown supports single selections as well as multiple sections. See example usage below.
-	 single item selection example
-	 {{
-		dropdown-list
-		content=myDataList
-		optionValuePath="content.id"
-		optionLabelPath="content.label"
-		value=myAwesomeValue
-		action="myChangeAction"
-		prompt="Choose your poison"
-	}}
-	multiple item selection example
-	{{
-		dropdown-list
-		content=myDataList
-		optionValuePath="content.id"
-		optionLabelPath="content.label"
-		value=myAwesomeValues
-		multiple=true
-		class="chosen-select"
-		action="myChangeAction"
-		prompt="Choose your poison"
-	}}
-	content: Array<object>
-	optionValuePath: string denoting the path to an item in the content array to use when updating the value property (see below for information on value)
-	optionLabelPath: string denoting the path to an item in the content array to use as a nice string to render in the list item
-	value: object that should be updated with the selected value in the dropdown list. The actual value set is dependent on the optionValuePath
-	multiple: boolean value denoting whether multiple items in the list can be selected. Default is false.
-	class: string that should be used as class name for the select element
-	prompt: optional string to display on the top of the dropdown list when nothing is selected
-	action: name of function to invoke when the selected option changes
- */
-import Ember from 'ember';
+import { get } from '@ember/object';
 
-export default Ember.Component.extend({
+import { warn } from '@ember/debug';
+
+import Component from '@ember/component';
+
+import layout from '../templates/components/dropdown-list';
+
+export default Component.extend({
+	layout,
 	content: null,
 	selectedValue: null,
 	setAttrs(){
@@ -60,15 +31,15 @@ export default Ember.Component.extend({
 			labelPath = labelPath || 'label';
 
 			content = content.map( item => {
-				let value = valuePath === 'content' ? item : Ember.get(item, valuePath),
-					label = labelPath === 'content' ? item : Ember.get(item, labelPath);
+				let value = valuePath === 'content' ? item : get(item, valuePath),
+					label = labelPath === 'content' ? item : get(item, labelPath);
 
 				return { id: value, label:label };
 			});
 			valuePath = 'id';
 			labelPath = 'label';
 			content = content.map((item) => { return { id: item, label: item }; });
-			Ember.Logger.warn('You have not set the optionValuePath and the optionLabelPath for the dropdown-list component');
+			warn('You have not set the optionValuePath and the optionLabelPath for the dropdown-list component');
 		}
 
 		//get the prompt text if any otherwise set a default
@@ -107,13 +78,13 @@ export default Ember.Component.extend({
 			.map(key => {
 				let option = event.target.selectedOptions[key];
 				let optionValue = content[option.getAttribute('data-index')];
-				return Ember.get(optionValue, valuePath);
+				return get(optionValue, valuePath);
 			});
 
 		const selectedValues = content.filter(option => {
-			return selectedOptions.indexOf(Ember.get(option, valuePath)) > -1;
+			return selectedOptions.indexOf(get(option, valuePath)) > -1;
 		}).map(value => {
-			return Ember.get(value, valuePath);
+			return get(value, valuePath);
 		});
 
 		if (!this.attrs.multiple) {

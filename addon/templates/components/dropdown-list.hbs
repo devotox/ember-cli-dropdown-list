@@ -1,4 +1,4 @@
-{{!
+{{yield}}{{!
 	Ember dropdown-list component template
 	See http://emberjs.com/deprecations/v1.x/#toc_ember-select
 	20 November 2015
@@ -8,12 +8,14 @@
 	{{#each contentCopy as |item index|}}
 		<option
 			data-index="{{index}}"
-			value="{{lookup item valuePath}}"
+			value="{{get item valuePath}}"
 			selected={{unless multiple
-						(eq value (lookup item valuePath))
-						(contains (lookup item valuePath) value)
-					}}
-		>{{lookup item labelPath}}</option>
+				(eq value (get item valuePath))
+				(contains (get item valuePath) value)
+			}}
+		>
+			{{get item labelPath}}
+		</option>
 	{{/each}}
 </select>
 

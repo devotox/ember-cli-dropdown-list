@@ -1,5 +1,28 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+<h2 id="title">Ember CLI Dropdown List</h2>
 
-{{outlet}}
+<h3>single item selection example</h3>
+
+{{dropdown-list
+	content=myDataList
+	value=myAwesomeValue
+	class="chosen-select"
+	prompt="Choose your poison"
+	optionValuePath="content.value"
+	optionLabelPath="content.label"
+}}
+
+<p>Value: {{myAwesomeValue}}</p>
+
+<h3>multiple item selection example</h3>
+
+{{dropdown-list
+	multiple=true
+	content=myDataList
+	value=myAwesomeValues
+	class="chosen-select"
+	prompt="Choose your poisons"
+	optionValuePath="content.value"
+	optionLabelPath="content.label"
+}}
+
+<p>Values: {{myAwesomeValues}}</p>
