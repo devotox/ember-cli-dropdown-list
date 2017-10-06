@@ -2,7 +2,7 @@
 
 [![Ember Observer Score](http://emberobserver.com/badges/ember-cli-dropdown-list.svg)](http://emberobserver.com/addons/ember-cli-dropdown-list)
 [![Build Status](https://travis-ci.org/devotox/ember-cli-dropdown-list.svg)](http://travis-ci.org/devotox/ember-cli-dropdown-list)
-[![Coverage Status](https://coveralls.io/repos/github/devotox/mber-cli-dropdown-list/badge.svg)](https://coveralls.io/github/devotox/mber-cli-dropdown-list)
+[![Coverage Status](https://coveralls.io/repos/github/devotox/ember-cli-dropdown-list/badge.svg)](https://coveralls.io/github/devotox/ember-cli-dropdown-list)
 [![NPM Version](https://badge.fury.io/js/ember-cli-dropdown-list.svg)](http://badge.fury.io/js/ember-cli-dropdown-list)
 [![NPM Downloads](https://img.shields.io/npm/dm/ember-cli-dropdown-list.svg)](https://www.npmjs.org/package/ember-cli-dropdown-list)
 [![Greenkeeper badge](https://badges.greenkeeper.io/devotox/ember-cli-dropdown-list.svg)](https://greenkeeper.io/)
