@@ -1,1 +1,14 @@
-{{yield}}
+<select multiple={{multiple}} class="{{class}}">
+	{{#each contentCopy as |item index|}}
+		<option
+			data-index="{{index}}"
+			value="{{get item valuePath}}"
+			selected={{unless multiple
+				(eq value (get item valuePath))
+				(contains (get item valuePath) value)
+			}}
+		>
+			{{get item labelPath}}
+		</option>
+	{{/each}}
+</select>
