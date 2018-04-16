@@ -6,8 +6,5 @@ export default Controller.extend({
 		{ value: 'yes', label: 'Yes' },
 		{ value: 'maybe', label: 'Maybe' },
 		{ value: 'yes-no', label: 'Yes & No' }
-	],
-	actions: {
-
-	}
+	]
 });
