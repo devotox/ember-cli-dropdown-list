@@ -1,7 +1,7 @@
 import Controller from '@ember/controller';
 
 export default Controller.extend({
-	myDataList: [
+	myDataList: [ // eslint-disable-line
 		{ value: 'no', label: 'No' },
 		{ value: 'yes', label: 'Yes' },
 		{ value: 'maybe', label: 'Maybe' },
