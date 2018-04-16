@@ -39,7 +39,9 @@ export default Component.extend({
 			valuePath = 'id';
 			labelPath = 'label';
 			content = content.map((item) => { return { id: item, label: item }; });
-			warn('You have not set the optionValuePath and the optionLabelPath for the dropdown-list component');
+			warn('You have not set the optionValuePath and the optionLabelPath for the dropdown-list component', {
+				id: 'option-value-path'
+			});
 		}
 
 		//get the prompt text if any otherwise set a default
@@ -94,7 +96,7 @@ export default Component.extend({
 		}
 
 		if (action) {
-			this.sendAction('action', selectedValues); // eslint-disable-line;
+			this.sendAction('action', selectedValues); // eslint-disable-line
 		}
 	}
 });

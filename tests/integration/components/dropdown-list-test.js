@@ -21,6 +21,6 @@ module('Integration | Component | dropdown-list', function(hooks) {
       {{/dropdown-list}}
     `);
 
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.notEqual(this.element.textContent.trim(), 'template block text');
   });
 });
