@@ -75,6 +75,7 @@
     "loader.js": "4.7.0"
   },
   "ember-addon": {
-    "configPath": "tests/dummy/config"
+    "configPath": "tests/dummy/config",
+    "demoURL": "https://devotox.github.io/ember-cli-dropdown-list"
   }
 }
