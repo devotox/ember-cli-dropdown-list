@@ -9,7 +9,7 @@
   ],
   "license": "MIT",
   "author": "Devonte Emokpae",
-  "repository": "github:devotox/ember-cli-dropdown-list"
+  "repository": "https://github.com/devotox/ember-cli-dropdown-list",
   "directories": {
     "doc": "doc",
     "test": "tests"
