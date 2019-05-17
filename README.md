@@ -3,8 +3,8 @@
 [![Coverage Status](https://codecov.io/gh/devotox/ember-cli-dropdown-list/branch/master/graph/badge.svg)](https://codecov.io/gh/devotox/ember-cli-dropdown-list)
 [![NPM Version](https://badge.fury.io/js/ember-cli-dropdown-list.svg)](http://badge.fury.io/js/ember-cli-dropdown-list)
 [![NPM Downloads](https://img.shields.io/npm/dm/ember-cli-dropdown-list.svg)](https://www.npmjs.org/package/ember-cli-dropdown-list)
-[![Dependency Status](https://david-dm.org/poetic/ember-cli-dropdown-list.svg)](https://david-dm.org/poetic/ember-cli-dropdown-list)
-[![DevDependency Status](https://david-dm.org/poetic/ember-cli-dropdown-list/dev-status.svg)](https://david-dm.org/poetic/ember-cli-dropdown-list#info=devDependencies)
+[![Dependency Status](https://david-dm.org/devotox/ember-cli-dropdown-list.svg)](https://david-dm.org/devotox/ember-cli-dropdown-list)
+[![DevDependency Status](https://david-dm.org/devotox/ember-cli-dropdown-list/dev-status.svg)](https://david-dm.org/devotox/ember-cli-dropdown-list#info=devDependencies)
 [![Greenkeeper](https://badges.greenkeeper.io/devotox/ember-cli-dropdown-list.svg)](https://greenkeeper.io/)
 
 ember-cli-dropdown-list
@@ -12,7 +12,7 @@ ember-cli-dropdown-list
 
 This dropdown supports single selections as well as multiple sections. See example usage below.
 
-[DEMO](http://devotox.github.io/ember-cli-dropdown-list)
+[DEMO](https://devotox.github.io/ember-cli-dropdown-list)
 
 Installation
 ------------------------------------------------------------------------------
